@@ -12,3 +12,5 @@ docker-compose up --build
 ```
 
 Po kilku chwilach pod adresem `http://localhost:4400` zostanie uruchomiona aplikacja.
+
+![Zrzut ekranowy z aplikacji](screenshot.png)
