@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+  <title>Wprowadzenie do bezpieczeństwa aplikacji www</title>
+</head>
+<body>
+  <div class="paper container">
+    {% for e in err %}
+    <div class="row alert alert-danger">
+        {{ e | safe }}
+      </div>
+    {% endfor %}
+    
+
+    {% if invoice  %}
+      <h3>Faktura FV/2020/{{ ('0000'+invoice.id).slice(-4) }}</h3>
+      <p>Wystawiona dla: <strong>{{ invoice.name }}</strong></p>
+      <table>
+          <thead>
+              <tr>
+                <th>Produkt</th>
+                <th>Cena</th>
+              </tr>
+          </thead>
+          <tbody>
+          {% for product in invoice.products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }} PLN</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+      <div class="alert alert-primary">Suma: <b>{{ sum }} PLN</b></div>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+version: "3"
+services:
+    app:
+        build: .
+        environment: 
+            DB_HOST: db
+            DB_USER: app
+            DB_PASSWORD: app
+            DB_NAME: app
+        ports:
+            - "4400:4400"
+
+    db:
+        image: mysql:8
+        ports: 
+            - '3306:3306'
+        environment: 
+            MYSQL_ROOT_PASSWORD: toor
+            MYSQL_DATABASE: app
+        volumes:
+            - './init.sql:/docker-entrypoint-initdb.d/init.sql'

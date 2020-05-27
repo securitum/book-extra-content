@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+  <title>Wprowadzenie do bezpieczeństwa aplikacji www</title>
+</head>
+<body>
+  <div class="paper container">
+    <h2>
+        Lista produktów
+    </h2>
+    <p>Kliknij na jeden z naszych poniższych cudowych produktów, by dowiedzieć się o nim nieco więcej.</p>
+    <ul>
+        {% for p in products %}
+        <li><a href="javascript:showProduct({{ p.id }})">{{ p.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <pre id=info></pre>
+  </div>
+  <script>
+      const infoElement = document.getElementById('info');
+      async function showProduct(id) {
+        infoElement.innerText = '';
+        const f = await fetch('/sql/get-product?id=' + Number(id));
+        const info = (await f.json());
+        infoElement.innerText = `Produkt: ${info.name}\n--\n${info.description}`;
+      }
+  </script>
+</body>
+</html>

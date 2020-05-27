@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 4276ca20dc9f5c1d06827f0764f37da09686e99e Michal Bentkowski <michal.bentkowski@securitum.pl> 1590245449 +0200	commit (initial): Initial commit
+4276ca20dc9f5c1d06827f0764f37da09686e99e 1e3b63549097b263315b101c6e8a8288889a904d Michal Bentkowski <michal.bentkowski@securitum.pl> 1590259191 +0200	commit: Exercise 1
+1e3b63549097b263315b101c6e8a8288889a904d b5d4b2ddc9ae2159e378f143f7ec18878f47968a Michal Bentkowski <michal.bentkowski@securitum.pl> 1590262272 +0200	commit: Add 2nd example and a list of examples
+b5d4b2ddc9ae2159e378f143f7ec18878f47968a 7232f1b8bd9b0b49fe21ff9b393189c9fc0bc93e Michal Bentkowski <michal.bentkowski@securitum.pl> 1590268146 +0200	commit: Add ping
+7232f1b8bd9b0b49fe21ff9b393189c9fc0bc93e 23150095be96764695a5726ac6ce38ac6c46b8ed Michal Bentkowski <michal.bentkowski@securitum.pl> 1590270197 +0200	commit: Dockerize
+23150095be96764695a5726ac6ce38ac6c46b8ed 3b10c3d71a981aa87b7e1894e56e6235b0d824ab Michal Bentkowski <michal.bentkowski@securitum.pl> 1590270434 +0200	commit: Add .git to .dockerignore
+3b10c3d71a981aa87b7e1894e56e6235b0d824ab a44d2b5004ab61c8508f2538694b0d31d85d0e87 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590273810 +0200	commit: Add invoice
+a44d2b5004ab61c8508f2538694b0d31d85d0e87 627a255efd42091e92c566308f263a1732f99169 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590274083 +0200	commit: Update price in invoice
+627a255efd42091e92c566308f263a1732f99169 a20f87a7b1d668db81de023563029216d6284421 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590274453 +0200	commit: Make /invoice XSS-able
+a20f87a7b1d668db81de023563029216d6284421 5aededbcd0544ba03a0cd07f7208cd4a58ee54e1 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590327353 +0200	commit: Add access-control example
+5aededbcd0544ba03a0cd07f7208cd4a58ee54e1 12464f16dbd1e2fb24051e74cc266cb5025193ec Michal Bentkowski <michal.bentkowski@securitum.pl> 1590327448 +0200	commit: Add description to /access-control
+12464f16dbd1e2fb24051e74cc266cb5025193ec d65faf39b1270b4923400e328202a1b943b4aab6 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590336805 +0200	commit: Add SQL Injection examples
+d65faf39b1270b4923400e328202a1b943b4aab6 3f6f6bab06dbf3feb78f29fdd83c11294939e240 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590347415 +0200	commit: Add SQL exercises
+3f6f6bab06dbf3feb78f29fdd83c11294939e240 61fae9ae24c7df7302bb29f3535641d2a8ce62d4 Michal Bentkowski <michal.bentkowski@securitum.pl> 1590382594 +0200	commit: Add vhosts

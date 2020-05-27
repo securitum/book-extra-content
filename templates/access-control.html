@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+  <title>Test</title>
+</head>
+<body>
+  <div class="paper container">
+  {% if user %}
+    <h1>Panel użytkownika</h1>
+    <p>Zalogowany jako <strong>{{ user }}</strong> (<a href="/access-control/logout">Wyloguj</a>)</p>
+    
+    {% if operations.user.length > 0 %}
+        <h4>Zarządzanie użytkownikami</h4>
+        <ul>
+        {% for oper in operations.user %}
+            <li><a href="{{oper.url}}">{{oper.description}}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% if operations.invoice.length > 0 %}
+        <h4>Faktury</h4>
+        <ul>
+        {% for oper in operations.invoice %}
+            <li><a href="{{oper.url}}">{{oper.description}}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% if operations.product.length > 0 %}
+        <h4>Produkty</h4>
+        <ul>
+        {% for oper in operations.product %}
+            <li><a href="{{oper.url}}">{{oper.description}}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+  {% else %}
+    <h1>Zaloguj się</h1>
+      {% if error %}
+        <div class="row alert alert-danger">
+          {{ error }}
+        </div>
+      {% endif %}
+    <form accept-charset="utf-8" 
+          action="/access-control/login" 
+          method="post" 
+          enctype="application/x-www-form-urlencoded" 
+          autocomplete="off">
+        <label for=login>Login</label><input name="login" id="login">
+        <label for=password>Hasło</label><input name=password id=password type=password>
+        <button class="btn-primary">Zaloguj!</button>
+    </form>
+  {% endif %}
+
+
+  </div>
+</body>
+</html>

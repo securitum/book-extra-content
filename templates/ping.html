@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+  <title>Wprowadzenie do bezpieczeństwa aplikacji www</title>
+</head>
+<body>
+  <div class="paper container">
+    <h2>
+        ping
+    </h2>
+    <form action="/ping" enctype="application/x-www-form-urlencoded" method="POST">
+      <label for="host">Nazwa hosta</label>
+      <input name=host id=host placeholder="127.0.0.1"
+             autocomplete="off"
+             autofocus
+             pattern="^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$"
+             title="Wpisz poprawną nazwę hosta">
+      <button class="btn-primary">Wykonaj ping</button>
+    </form>
+    <pre id=output></pre>
+    <script>
+      const outputElement = document.getElementById('output');
+      document.forms[0].addEventListener('submit', async ev => {
+        outputElement.innerText = '';
+        ev.preventDefault();
+        const f = await fetch('/ping', {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(document.forms[0]))
+        });
+
+        const json = await f.json();
+        outputElement.innerText = json.output;
+      });
+
+
+    </script>
+  </div>
+</body>
+</html>
